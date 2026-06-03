@@ -5,8 +5,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from .routes.preference import router as preference_router
 #sensor 데이터 관련 API router 불러오기
 from .routes.sensor import router as sensor_router
+from app.routes import click
 from app.routes import device_status
 from app.routes import recommendation
+from app.routes import auth
+from app.routes import preference_status
 
 #FastAPI앱 생성
 app = FastAPI()
@@ -42,3 +45,16 @@ app.include_router(
 app.include_router(
     recommendation.router
 )
+
+app.include_router(
+    auth.router
+)
+
+app.include_router(
+    click.router 
+)
+
+app.include_router(
+    preference_status.router
+)
+

@@ -73,8 +73,64 @@ def get_recommendation(device_id: str):
             "Farm condition is stable"
         )
 
+    recommended_temperature = max(
+        24,
+        min(
+            avg_temperature,
+            26
+        )
+    )
+
+    recommended_temperature2 = (
+        temperature2
+    )
+
+    recommended_humidity = max(
+        60,
+        min(
+            humidity,
+            70
+        )
+    )
+
+    recommended_co2 = max(
+        800,
+        min(
+            co2,
+            1000
+        )
+    )
+
     return {
 
-        "recommendations":
-        recommendations
-    }
+    "recommendations":
+    recommendations,
+
+    "recommended_temperature":
+
+    round(
+        recommended_temperature,
+        1
+    ),
+
+    "recommended_temperature2":
+
+    round(
+        recommended_temperature2,
+        1
+    ),
+
+    "recommended_humidity":
+
+    round(
+        recommended_humidity,
+        1
+    ),
+
+    "recommended_co2":
+
+    round(
+        recommended_co2,
+        0
+    )
+}
