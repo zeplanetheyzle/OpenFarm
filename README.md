@@ -39,6 +39,10 @@ OpenFarm/
 |   ├── raspberrypi/
 |   |    └── main.cpp
 |   |
+|   ├── Arduino/
+|   |    ├──  OpenFarm_Collection.ino
+│   │       └──OpenFarm_Control.ino
+|   ├── Procfile
 │   └── requirements.txt
 │
 ├── frontend/
@@ -62,22 +66,19 @@ OpenFarm/
 │   │   ├── DownloadButton.tsx       # CSV 다운로드
 │   │   └── PreferencePieChart.tsx   # 클릭 통계 파이차트
 │   ├── public/
-│   │   ├── images/
-│   │   └── icons/
-│   │
+│   │   └── images/
+|   |
+|   ├──.gitignore
+│   ├── next.config.ts
+│   ├── postcss.config.mjs
 │   ├── package.json
-│   ├── tailwind.config.ts
+│   ├── package-lock.json
 │   └── tsconfig.json
 │
 ├── model_test/                        # AI Model
 │   ├── best.pt                        # YOLO Weight
 │   ├── DB연동코드.cpp                  # Arduino DB Upload
 │   └── 최적데이터추출.py               # Data Processing
-│
-├── images/                            # README Images
-│   ├── architecture.png
-│   ├── dashboard.png
-│   └── demo.gif
 │
 ├── README.md
 ├── LICENSE
