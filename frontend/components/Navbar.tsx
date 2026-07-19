@@ -31,8 +31,8 @@ export default function Navbar() {
 
                 <div className="text-3xl font-bold text-green-700 leading-8 cursor-pointer">
 
-                    Public <br />
-                    Smart Farm SET
+                    Open <br />
+                    Farm
 
                 </div>
 
@@ -59,52 +59,53 @@ export default function Navbar() {
                     </button>
 
                 </Link>
+
+                {user && (
+
+                    <Link href="/monitor">
+                        <button className="cursor-pointer">
+                            MONITOR
+                        </button>
+                    </Link>
+                )}
+
+                {user && (
+                <div className="relative group">
+                    <button className="cursor-pointer">MYPAGE</button>
+                    <div className="absolute top-full left-0 hidden group-hover:block bg-white shadow-xl rounded-xl py-2 min-w-[160px] z-50 border">
+                    <Link href="/mypage">
+                        <div className="px-5 py-3 hover:bg-green-50 text-gray-700 text-sm font-medium cursor-pointer">
+                        ⚙️ Setting
+                        </div>
+                    </Link>
+                    <Link href="/mysmartfarm">
+                        <div className="px-5 py-3 hover:bg-green-50 text-gray-700 text-sm font-medium cursor-pointer">
+                        🌿 My SmartFarm
+                        </div>
+                    </Link>
+                    </div>
+                </div>
+                )}
                 
 
             </div>
 
             <div className="flex gap-6 items-center">
 
-                <input
-                    type="text"
-
-                    value={search}
-
-                    onChange={(e) =>
-                        setSearch(e.target.value)
+            <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === "Enter" && search.trim() !== "") {
+                        window.location.href = `/crop/${search.trim()}`
                     }
+                }}
+                placeholder="Search"
+                className="border-2 border-green-300 rounded-full px-6 py-2 text-black placeholder-black"
+                style={{ borderColor: "#000000" }}
+            />
 
-                    onKeyDown={(e) => {
-
-                        if (
-                            e.key === "Enter"
-                            &&
-                            search.trim() !== ""
-                        ) {
-
-                            window.location.href =
-                            `/crop/${search.trim()}`
-                        }
-                    }}
-
-                    placeholder="Search"
-
-                    className="
-                        border-2
-                        border-green-300
-                        rounded-full
-                        px-6
-                        py-2
-                    "
-                />
-
-                <Link href="/mypage">
-                    <button className="text-xl">
-
-                        ☰
-
-                    </button>
-                </Link>
                 {
                     user
 

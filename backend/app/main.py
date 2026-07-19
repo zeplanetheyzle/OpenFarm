@@ -10,6 +10,8 @@ from app.routes import device_status
 from app.routes import recommendation
 from app.routes import auth
 from app.routes import preference_status
+from app.routes import control
+from app.routes import smartfarm
 
 #FastAPI앱 생성
 app = FastAPI()
@@ -58,3 +60,6 @@ app.include_router(
     preference_status.router
 )
 
+app.include_router(control.router)
+
+app.include_router(smartfarm.router)

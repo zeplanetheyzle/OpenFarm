@@ -1,102 +1,38 @@
 from fastapi import APIRouter
-
-import subprocess
-
-from app.preference_supabase import (
-    preference_supabase
-)
+from app.preference_supabase import preference_supabase
 
 router = APIRouter()
 
 @router.get("/preference")
-
-def get_preference(
-    email: str
-):
-    response = (
-
-        preference_supabase
-
-        .table(
-            "user_preference"
-        )
-
-        .select("*")
-
-        .eq(
-            "email",
-            email
-        )
-
+def get_preference(email: str):
+    response = preference_supabase\
+        .table("user_preference")\
+        .select("*")\
+        .eq("email", email)\
         .execute()
-    )
-
-    print("preference =", response.data)
 
     if len(response.data) == 0:
-
         return {
-            "recommended_order":
-            ["REPORT", "TABLE", "GRAPH"]
+            "recommended_order": ["GRAPH", "TABLE"],
+            "pin_mode": False,
+            "first_section": "GRAPH",
+            "second_section": "TABLE",
         }
 
     data = response.data[0]
 
+    graph_click = data.get("graph_click", 0) or 0
+    table_click = data.get("table_click", 0) or 0
 
-    graph_click = data["graph_click"]
-
-    report_click = data["report_click"]
-
-    table_click = data["table_click"]
-
-    result = subprocess.run(
-
-        [
-
-            "./app/cpp/preference_engine.exe",
-
-            str(graph_click),
-
-            str(report_click),
-
-            str(table_click)
-        ],
-
-        capture_output=True,
-
-        text=True
-    )
-
-    order = result.stdout.strip().split(",")
+    # 클릭 수 기반으로 순서 결정
+    if table_click > graph_click:
+        order = ["TABLE", "GRAPH"]
+    else:
+        order = ["GRAPH", "TABLE"]
 
     return {
-
-        "recommended_order":
-        order,
-
-        "pin_mode":
-        data.get(
-            "pin_mode",
-            False
-        ),
-
-        "first_section":
-        data.get(
-            "first_section",
-            "GRAPH"
-        ),
-
-        "second_section":
-        data.get(
-            "second_section",
-            "REPORT"
-        ),
-
-        "third_section":
-        data.get(
-            "third_section",
-            "TABLE"
-        )
+        "recommended_order": order,
+        "pin_mode": data.get("pin_mode", False),
+        "first_section": data.get("first_section", "GRAPH"),
+        "second_section": data.get("second_section", "TABLE"),
     }
-    
-

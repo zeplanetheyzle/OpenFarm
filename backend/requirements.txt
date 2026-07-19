@@ -1,0 +1,6 @@
+cd backend
+venv\Scripts\activate
+pip freeze > requirements.txt
+
+cd frontend
+npm run dev

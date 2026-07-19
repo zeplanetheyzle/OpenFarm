@@ -1,5 +1,4 @@
 import GraphChart from "@/components/GraphChart"
-import Navbar from "@/components/Navbar"
 import CropCard from "@/components/CropCard"
 
 export default function Home() {
@@ -7,8 +6,6 @@ export default function Home() {
   return (
 
     <div className="min-h-screen bg-gray-50">
-
-      <Navbar />
 
       <div className="text-center mt-20">
 
@@ -51,8 +48,8 @@ export default function Home() {
         />
 
         <CropCard
-          name="Green Onion"
-          image="/images/greenonion.jpg"
+          name="Onion"
+          image="/images/onion.jpg"
         />
 
       </div>

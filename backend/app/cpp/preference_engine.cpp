@@ -7,9 +7,7 @@
 using namespace std;
 
 struct Item {
-
     string name;
-
     int click;
 };
 
@@ -26,17 +24,12 @@ int main(
     int graphClick =
         atoi(argv[1]);
 
-    int reportClick =
-        atoi(argv[2]);
-
     int tableClick =
-        atoi(argv[3]);
+        atoi(argv[2]);
 
     vector<Item> items = {
 
         {"GRAPH", graphClick},
-
-        {"REPORT", reportClick},
 
         {"TABLE", tableClick}
     };
@@ -44,7 +37,6 @@ int main(
     sort(
 
         items.begin(),
-
         items.end(),
 
         [](const Item& a,

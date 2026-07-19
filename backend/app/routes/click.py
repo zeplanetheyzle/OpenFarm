@@ -50,8 +50,6 @@ def add_click(
                 "graph_click": 0,
 
                 "table_click": 0,
-
-                "report_click": 0
             })
 
             .execute()
