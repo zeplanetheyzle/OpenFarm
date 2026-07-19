@@ -37,8 +37,9 @@ OpenFarm/
 │   │       ├── device_status.py     # 기기 상태 조회
 │   │       └── click.py             # 클릭 통계 기록
 |   ├── raspberrypi/
-|   |    ├── main.cpp
-│   ├── requirements.txt
+|   |    └── main.cpp
+|   |
+│   └── requirements.txt
 │
 ├── frontend/
 │   ├── app/
