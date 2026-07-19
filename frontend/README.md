@@ -2,6 +2,7 @@
 
 ## 기술 스택
 분류기술프레임워크Next.js 15 (App Router)언어TypeScript스타일Tailwind CSS그래프rechartsPDFhtml2canvas + jsPDF배포Vercel
+
 ---
 
 ## 파일 구조
@@ -52,6 +53,7 @@ frontend/
 envNEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 배포 시 Vercel 환경 변수에도 동일하게 설정합니다.
+
 ---
 
 ## 실행 방법
@@ -63,6 +65,7 @@ npm run dev
 
 → http://localhost:3000 에서 실행
 ```
+
 ---
 
 ## 페이지 설명
@@ -79,12 +82,10 @@ npm run dev
 
 작물별 센서 데이터 시각화.
 
-
 GRAPH 섹션: 온도·습도·CO₂ Line 차트
 TABLE 섹션: 페이지네이션 테이블
 CSV 다운로드 · Device Status 확인
 클릭 수 기반 GRAPH/TABLE 순서 자동 정렬 (선호도 API 연동)
-
 
 ### /monitor
 
@@ -107,7 +108,6 @@ AI Growth Report 팝업 · PDF 다운로드
 제어 목록 타임라인
 "상세 모니터링 보기" → /monitor 이동
 
-
 ### /mypage
 
 My SmartFarm: 팜 등록 · 삭제
@@ -122,6 +122,7 @@ Setting:
 이메일/비밀번호 인증
 엔터 키 로그인 지원
 이메일 중복 체크 (회원가입)
+
 ---
 
 ## 주요 컴포넌트
