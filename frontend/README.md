@@ -1,6 +1,4 @@
 🌿 OpenFarm Frontend
-Next.js 15 기반 AI 스마트팜 모니터링 웹 클라이언트
----
 
 ## 기술 스택
 분류기술프레임워크Next.js 15 (App Router)언어TypeScript스타일Tailwind CSS그래프rechartsPDFhtml2canvas + jsPDF배포Vercel
