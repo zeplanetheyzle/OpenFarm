@@ -36,8 +36,9 @@ OpenFarm/
 │   │       ├── recommendation.py    # 규칙 기반 환경 추천
 │   │       ├── device_status.py     # 기기 상태 조회
 │   │       └── click.py             # 클릭 통계 기록
+|   ├── raspberrypi/
+|   |    ├── main.cpp
 │   ├── requirements.txt
-│   └── .env
 │
 ├── frontend/
 │   ├── app/
@@ -59,8 +60,29 @@ OpenFarm/
 │   │   ├── DataTable.tsx            # 센서 데이터 테이블
 │   │   ├── DownloadButton.tsx       # CSV 다운로드
 │   │   └── PreferencePieChart.tsx   # 클릭 통계 파이차트
+│   ├── public/
+│   │   ├── images/
+│   │   └── icons/
+│   │
 │   ├── package.json
-│   └── .env.local
+│   ├── tailwind.config.ts
+│   └── tsconfig.json
+│
+├── model_test/                        # AI Model
+│   ├── best.pt                        # YOLO Weight
+│   ├── DB연동코드.cpp                  # Arduino DB Upload
+│   └── 최적데이터추출.py               # Data Processing
+│
+├── images/                            # README Images
+│   ├── architecture.png
+│   ├── dashboard.png
+│   └── demo.gif
+│
+├── db.sql                             # Database Schema
+├── README.md
+├── LICENSE
+└── .gitignore
+
 ```
 
 ---
