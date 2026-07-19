@@ -79,7 +79,6 @@ OpenFarm/
 │   ├── dashboard.png
 │   └── demo.gif
 │
-├── db.sql                             # Database Schema
 ├── README.md
 ├── LICENSE
 └── .gitignore
@@ -90,32 +89,33 @@ OpenFarm/
 
 ## 🗄 DB 구조
 
-### hey DB (수집형 스마트팜)
+### 수집형 스마트팜 데이터용 DB
 | 테이블 | 주요 컬럼 |
 |--------|-----------|
 | `sensor_logs` | id, created_at, device_id, temperature, temperature2, humidity, co2_level, image_url, crop_type |
 
 - device_id: `openfarm1` (형남공학관 5층 과방), `openfarm2` (창신관 3층)
 
-### phr DB (사용자 관리)
+### 사용자 관리용 DB
 | 테이블 | 주요 컬럼 |
 |--------|-----------|
 | `users` | id, email, password |
 | `user_preference` | id, email, graph_click, report_click, table_click, pin_mode, first_section, second_section |
 | `smartfarms` | id, user_email, device_id, location, crop_type, size, created_at |
 
-### qom DB (제어형 스마트팜)
+### 제어형 스마트팜 데이터용 DB
 | 테이블 | 주요 컬럼 |
 |--------|-----------|
+| `model_data` | id, created_at, device_id, humidity, co2_level, temperature, plant_area |
 | `recommend_logs` | id, created_at, device_id, temperature, humidity, co2_level, plant_area, recommended_temp, recommended_hum |
 
 ### DB 연결 흐름
 ```
-phr.users.email
+users.email
     ↓
-phr.smartfarms.user_email → device_id
+smartfarms.user_email → device_id
                                 ↓
-                    qom.recommend_logs.device_id
+                    recommend_logs.device_id, model_data.device_id
 ```
 
 ---
