@@ -1,5 +1,5 @@
 --센서데이터 테이블 생성
-create table sensor_data (
+create table sensor_logs (
 
     id bigint generated always as identity primary key,
 
@@ -18,7 +18,7 @@ create table sensor_data (
     growth_status text
 );
 
-insert into sensor_data
+insert into sensor_logs
 (
     crop_type,
     device_id,
