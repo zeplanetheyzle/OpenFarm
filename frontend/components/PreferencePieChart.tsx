@@ -26,8 +26,8 @@ export default function PreferencePieChart({ graph, table }: Props) {
         </Pie>
         <Legend
           payload={[
-            { value: "Graph", color: COLORS[0] },
-            { value: "Table", color: COLORS[1] },
+            { value: "Graph", color: COLORS[0], type: "circle" as const },
+            { value: "Table", color: COLORS[1], type: "circle" as const },
           ]}
         />
       </PieChart>
