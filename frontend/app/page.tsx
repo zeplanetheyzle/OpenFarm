@@ -9,7 +9,7 @@ export default function Home() {
 
       <div className="text-center mt-20">
 
-        <h1 className="text-6xl font-bold">
+        <h1 className="text-3xl lg:text-6xl font-bold">
           SMART FARM DATASET
         </h1>
 

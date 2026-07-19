@@ -360,7 +360,7 @@ function MonitorContent() {
 
         {!data ? (
           <div className="text-center py-20 text-gray-400">
-            <div className="text-5xl mb-4">🌱</div>
+            <div className="text-2xl lg:text-5xl mb-4">🌱</div>
             <p className="text-lg font-medium">아직 수집된 데이터가 없습니다</p>
             <p className="text-sm mt-2">스마트팜 기기가 연결되면 데이터가 자동으로 표시됩니다</p>
           </div>
@@ -384,7 +384,7 @@ function MonitorContent() {
             {/* 2. 현재 상태 */}
             <div className="bg-white rounded-2xl shadow p-6 mb-6">
               <h2 className="text-xl font-bold text-gray-800 mb-4">현재 상태</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                   { label: "온도", value: `${data.temperature?.toFixed(1)}°C`, ok: data.temperature >= THRESHOLDS.temperature.min && data.temperature <= THRESHOLDS.temperature.max, color: "text-orange-500" },
                   { label: "습도", value: `${data.humidity?.toFixed(1)}%`, ok: data.humidity >= THRESHOLDS.humidity.min && data.humidity <= THRESHOLDS.humidity.max, color: "text-blue-500" },
@@ -406,7 +406,7 @@ function MonitorContent() {
             {controlData && (
               <div className="bg-white rounded-2xl shadow p-6 mb-6">
                 <h2 className="text-xl font-bold text-gray-800 mb-4">추천 상태 <span className="text-sm font-normal text-gray-400">(KNN k=5 기반)</span></h2>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   <div className="rounded-xl p-4 bg-blue-50 border border-blue-200">
                     <div className="text-sm text-gray-500 mb-1">추천 온도</div>
                     <div className="flex items-end gap-2">

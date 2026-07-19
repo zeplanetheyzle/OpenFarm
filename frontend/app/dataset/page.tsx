@@ -14,20 +14,20 @@ const crops = [
 export default function DatasetPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-5xl mx-auto px-20 py-20">
+      <div className="max-w-5xl mx-auto px-4 lg:px-20 py-20">
 
         {/* 헤더 */}
         <div className="mb-14">
-          <h1 className="text-6xl font-black text-black mb-3">Dataset</h1>
+          <h1 className="text-3xl lg:text-6xl font-black text-black mb-3">Dataset</h1>
           <p className="text-gray-400 text-lg">작물을 선택해 환경 데이터와 성장 기록을 확인하세요</p>
         </div>
 
         {/* 그리드 */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 lg:grid-cols-3 gap-5">
           {crops.map((crop) => (
             <Link key={crop.name} href={`/crop/${crop.name}`}>
               <div className={`bg-gradient-to-br ${crop.color} border-2 ${crop.border} ${crop.hover} rounded-3xl p-8 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg group`}>
-                <div className="text-5xl mb-4">{crop.emoji}</div>
+                <div className="text-2xl lg:text-5xl mb-4">{crop.emoji}</div>
                 <div className="text-2xl font-black text-gray-800 mb-1">{crop.label}</div>
                 <div className="text-sm text-gray-400 font-medium">{crop.name}</div>
                 <div className="mt-4 text-xs text-gray-400 group-hover:text-gray-600 transition-colors">

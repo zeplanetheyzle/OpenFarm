@@ -79,7 +79,7 @@ export default function IntroductionPage() {
     <div className="min-h-screen bg-white overflow-x-hidden">
 
       {/* 히어로 섹션 */}
-      <div className="relative bg-gradient-to-br from-green-600 via-green-500 to-emerald-400 text-white px-20 py-32 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-green-600 via-green-500 to-emerald-400 text-white px-4 lg:px-20 py-32 overflow-hidden">
         {/* 배경 원 장식 */}
         <div className="absolute top-[-80px] right-[-80px] w-96 h-96 rounded-full bg-white opacity-5" />
         <div className="absolute bottom-[-60px] left-[-60px] w-72 h-72 rounded-full bg-white opacity-5" />
@@ -91,7 +91,7 @@ export default function IntroductionPage() {
             <span className="bg-white bg-opacity-20 text-white text-sm font-medium px-4 py-2 rounded-full mb-6 inline-block">
               🌿 AI 기반 스마트팜 플랫폼
             </span>
-            <h1 className="text-7xl font-black mb-6 leading-tight tracking-tight">
+            <h1 className="text-4xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
               Open<span className="text-green-200">Farm</span>
             </h1>
             <p className="text-2xl text-green-100 leading-relaxed max-w-2xl mb-10">
@@ -110,7 +110,7 @@ export default function IntroductionPage() {
 
       {/* 숫자 통계 */}
       <div className="bg-gray-50 py-16 px-20 border-b">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 text-center">
         {[
         {
             label: "수집 센서 종류",
@@ -132,7 +132,7 @@ export default function IntroductionPage() {
         ].map((s, i) => (
         <FadeIn key={s.label} delay={i * 0.15}>
             <div className="p-6">
-            <div className="text-5xl font-black text-green-600 mb-2">
+            <div className="text-2xl lg:text-5xl font-black text-green-600 mb-2">
                 <Counter target={s.target} suffix={s.suffix} />
             </div>
             <div className="text-gray-700 font-bold mb-2">{s.label}</div>
@@ -143,7 +143,7 @@ export default function IntroductionPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-20 py-20">
+      <div className="max-w-5xl mx-auto px-4 lg:px-20 py-20">
 
         {/* 서비스 소개 */}
         <FadeIn className="mb-20">
@@ -163,7 +163,7 @@ export default function IntroductionPage() {
         {/* 핵심 기능 */}
         <FadeIn className="mb-20">
           <h2 className="text-4xl font-black text-green-600 mb-8">핵심 기능</h2>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {features.map((f, i) => (
               <div
                 key={f.title}

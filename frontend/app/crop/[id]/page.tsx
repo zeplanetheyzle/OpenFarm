@@ -189,11 +189,11 @@ export default function CropDetailPage({ params }: { params: Promise<{ id: strin
 
             {/* 상단 배경 */}
             <div
-                className="w-full h-[350px] bg-cover bg-center flex flex-col justify-center px-20"
+                className="w-full h-[350px] bg-cover bg-center flex flex-col justify-center px-4 lg:px-20"
                 style={{ backgroundImage: `url(/images/${id}.jpg)` }}
             >
                 <div className="bg-white/70 p-10 rounded-3xl w-fit">
-                    <h1 className="text-7xl font-bold text-orange-400">
+                    <h1 className="text-4xl lg:text-7xl font-bold text-orange-400">
                         {cropNameMap[id] || id}
                     </h1>
                     <p className="text-2xl mt-5 text-gray-700">Smart Farm Environment Data</p>
@@ -209,11 +209,11 @@ export default function CropDetailPage({ params }: { params: Promise<{ id: strin
                 </div>
             </div>
 
-            <div className="p-20">
+            <div className="p-4 lg:p-4 lg:p-20">
                 {!selected ? (
                 devices.length === 0 ? (
                     <div className="text-center py-20 text-gray-400">
-                    <div className="text-6xl mb-4">🌱</div>
+                    <div className="text-3xl lg:text-6xl mb-4">🌱</div>
                     <p className="text-xl font-medium text-gray-600 mb-2">아직 수집된 데이터가 없습니다</p>
                     <p className="text-sm text-gray-400">현재 {cropNameMap[id] || id} 재배 데이터가 수집되지 않았습니다</p>
                     </div>

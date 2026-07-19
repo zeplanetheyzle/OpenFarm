@@ -131,7 +131,7 @@ export default function MySmartFarmPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white px-20 py-16">
+    <div className="min-h-screen bg-white px-4 lg:px-20 py-16">
       <div className="max-w-5xl mx-auto">
 
         {/* 헤더 */}
@@ -152,7 +152,7 @@ export default function MySmartFarmPage() {
         {showForm && (
           <div className="bg-green-50 border border-green-200 rounded-2xl p-8 mb-10">
             <h2 className="text-xl font-bold text-green-700 mb-6">새 스마트팜 등록</h2>
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
               <div>
                 <label className="text-sm text-gray-500 mb-1 block">기기 ID</label>
                 <input value={form.device_id} onChange={e => setForm(p => ({ ...p, device_id: e.target.value }))}
@@ -194,11 +194,11 @@ export default function MySmartFarmPage() {
         {/* 팜 목록 */}
         {farms.length === 0 ? (
           <div className="text-center py-20 text-gray-400">
-            <div className="text-6xl mb-4">🌱</div>
+            <div className="text-3xl lg:text-6xl mb-4">🌱</div>
             <p className="text-lg font-medium">등록된 스마트팜이 없습니다</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-5 mb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-10">
             {farms.map(farm => (
               <div key={farm.id}
                 className={`border-2 rounded-2xl p-7 cursor-pointer transition-all ${selectedFarm?.id === farm.id ? "border-green-400 bg-green-50 shadow-lg" : "border-gray-100 bg-white hover:border-green-300 hover:shadow"}`}
@@ -249,7 +249,7 @@ export default function MySmartFarmPage() {
                 {/* 최신 현재값 */}
                 <div className="bg-white rounded-2xl shadow p-6 mb-6">
                   <h3 className="text-lg font-bold text-gray-800 mb-4">현재 상태</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {[
                       { label: "온도", value: `${history[history.length-1]?.temperature?.toFixed(1)}°C`, color: "text-orange-500" },
                       { label: "습도", value: `${history[history.length-1]?.humidity?.toFixed(1)}%`, color: "text-blue-500" },

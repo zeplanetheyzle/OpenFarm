@@ -77,7 +77,7 @@ export default function MyPage() {
         </div>
 
         {/* 상단 2열 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
 
           {/* 이용 통계 */}
           <div className="bg-white rounded-2xl shadow p-6">
@@ -88,7 +88,7 @@ export default function MyPage() {
                 table={stats.table}
               />
             </div>
-            <div className="grid grid-cols-2 gap-3 mt-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-4">
               {[
                 { label: "그래프", value: stats.graph, color: "bg-blue-100 text-blue-700" },
                 { label: "테이블", value: stats.table, color: "bg-yellow-100 text-yellow-700" },
